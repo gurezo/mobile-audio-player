@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Capacitor } from '@capacitor/core';
+import { Keyboard } from '@capacitor/keyboard';
+import { SplashScreen } from '@capacitor/splash-screen';
+import { StatusBar, Style } from '@capacitor/status-bar';
 import { IonicModule } from '@ionic/angular';
 import { IonicAudioModule, ITrackConstraint } from 'ionic-audio';
-import { Capacitor } from '@capacitor/core';
-import { StatusBar, Style } from '@capacitor/status-bar';
-import { SplashScreen } from '@capacitor/splash-screen';
-import { Keyboard } from '@capacitor/keyboard';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-    IonicModule,
-    IonicAudioModule
-],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  imports: [IonicModule, IonicAudioModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   title = 'ionic-audio-demo';
