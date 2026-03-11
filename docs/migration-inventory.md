@@ -1,6 +1,8 @@
 +# Migration Inventory: Existing Ionic v3 + Angular v5 Stack
 +
-+## Root Library (`ionic-audio3`)
++This document describes the **legacy** (pre-migration) state. The root `src/`, root `tsconfig.json`, and `demo/` directory have been removed; the active library and demo live in `ng-workspace/`.
++
++## Root Library (`ionic-audio3`) — legacy
 +
 +- **Package name**: `ionic-audio3`
 +- **Version**: `3.2.3`
