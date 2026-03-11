@@ -1,7 +1,24 @@
-# Ionic Audio for Ionic 3
+# Ionic Audio (ionic-audio3)
+
 ##### Forked from [arielfaur's project](https://github.com/arielfaur/ionic-audio)
 
-An audio player plugin for Ionic that works out of the box in the browser and device using an underlying audio provider depending on the environment. When running inside the browser the plugin will default to a Web Audio provider, whereas on a device it will switch to Cordova Media if cordova-plugin-media is available, otherwise falls back to web audio.
+An audio player plugin for Ionic that works out of the box in the browser and on device using an underlying audio provider (Web Audio in the browser; Cordova Media or Web Audio on device).
+
+## Current stack (this repo)
+
+The project has been **migrated** from Ionic 3 + Angular 5 to a modern workspace in **`ng-workspace/`**:
+
+- **Angular** 21
+- **Ionic Angular** 8
+- **Capacitor** 8 (replacing Cordova for native)
+- **Vitest** for unit tests
+
+- **Library**: `ng-workspace/projects/ionic-audio` — build with `npm run build` (from repo root) or `cd ng-workspace && npm run build:lib`.
+- **Demo app**: `ng-workspace/projects/ionic-audio-demo` — run with `cd ng-workspace && npm start`, tests with `cd ng-workspace && npm test`.
+
+See **`ng-workspace/README.md`** for development server, build, and test commands.
+
+---
 
 ### Brief notes about some of the issues reported lately
 - Keep in mind that in certain scenarios you might be better off using standard HTML 5 audio components instead of this plugin
@@ -18,7 +35,9 @@ An audio player plugin for Ionic that works out of the box in the browser and de
 
 ## Installation
 
-Make sure you have Ionic and Angular installed.
+**Using the migrated package (Angular 21 + Ionic Angular 8):** install from the built library in this repo or from a published version that includes the `ng-workspace` build. In your Angular app, import `IonicAudioModule` from `ionic-audio` and add `provideIonicAngular()` (or `IonicModule.forRoot()`) as needed. See the demo app in `ng-workspace/projects/ionic-audio-demo` for a full example.
+
+**Legacy (Ionic 3 / Angular 5):** the following applied to the original stack.
 
 ```
 npm install --save ionic-audio3
@@ -27,9 +46,6 @@ npm install --save ionic-audio3
 ```typescript
 import { IonicAudioModule, WebAudioProvider, CordovaMediaProvider, defaultAudioProviderFactory } from 'ionic-audio3';
 
-/**
- * Sample custom factory function to use with ionic-audio3
- */
 export function myCustomAudioProviderFactory() {
   return (window.hasOwnProperty('cordova')) ? new CordovaMediaProvider() : new WebAudioProvider();
 }
@@ -37,7 +53,6 @@ export function myCustomAudioProviderFactory() {
 @NgModule({
   imports: [
     IonicAudioModule.forRoot(defaultAudioProviderFactory),
-    // or use a custom provided function shown above myCustomAudioProviderFactory
   ]
 })
 export class AppModule {}
@@ -45,7 +60,7 @@ export class AppModule {}
 
 ## Usage
 
-**Import and inject `AudioProvider` where needed (optional):**
+**Import and inject `AudioProvider` where needed (optional)** (legacy example):
 
 ```typescript
 import {Component, Provider} from '@angular/core';

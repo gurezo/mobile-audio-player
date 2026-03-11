@@ -1,7 +1,7 @@
 {
   "name": "ionic-audio3",
   "version": "3.2.3",
-  "description": "An audio player originally built for Ionic 3 and Angular 5, now migrated to Angular 17 in ng-workspace.",
+  "description": "An audio player originally built for Ionic 3 and Angular 5, now migrated to Angular 21, Ionic Angular 8, and Capacitor 8 in ng-workspace.",
   "scripts": {
     "build": "cd ng-workspace && npm run build:lib",
     "release": "npm run build && cd ng-workspace/dist/ionic-audio && npm publish",
