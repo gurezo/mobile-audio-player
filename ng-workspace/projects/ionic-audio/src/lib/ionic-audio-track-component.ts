@@ -10,7 +10,6 @@ import {
 import { ITrackConstraint, IAudioTrack } from './ionic-audio-interfaces';
 import { AudioProvider } from './ionic-audio-providers';
 import { WebAudioTrack } from './ionic-audio-web-track';
-import { CordovaAudioTrack } from './ionic-audio-cordova-track';
 
 @Component({
     selector: 'audio-track',
@@ -32,7 +31,7 @@ export class AudioTrackComponent implements OnChanges, DoCheck, IAudioTrack {
   ngOnInit() {
     if (!this.track) return;
 
-    if (!(this.track instanceof WebAudioTrack) && !(this.track instanceof CordovaAudioTrack)) {
+    if (!(this.track instanceof WebAudioTrack)) {
       this._audioTrack = this._audioProvider.create(this.track);
     } else if (this._audioTrack) {
       Object.assign(this._audioTrack, this.track);

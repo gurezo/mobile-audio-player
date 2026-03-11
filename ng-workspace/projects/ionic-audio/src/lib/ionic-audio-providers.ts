@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IAudioProvider, ITrackConstraint, IAudioTrack } from './ionic-audio-interfaces';
 import { WebAudioTrack } from './ionic-audio-web-track';
-import { CordovaAudioTrack } from './ionic-audio-cordova-track';
 
 export function defaultAudioProviderFactory() {
-  return (window as any).cordova && (window as any).Media
-    ? new CordovaMediaProvider()
-    : new WebAudioProvider();
+  return new WebAudioProvider();
 }
 
 @Injectable()
@@ -93,25 +90,3 @@ export class WebAudioProvider extends AudioProvider {
     return newAudioTrack;
   }
 }
-
-@Injectable()
-export class CordovaMediaProvider extends AudioProvider {
-  constructor() {
-    super();
-    console.log('Using Cordova Media provider');
-  }
-
-  override create(track: ITrackConstraint): IAudioTrack {
-    const audioTrack = new CordovaAudioTrack();
-    audioTrack.src = track.src;
-    Object.assign(audioTrack, track);
-    const trackId = CordovaMediaProvider.tracks.push(audioTrack);
-    audioTrack.id = trackId - 1;
-    return audioTrack;
-  }
-
-  override replace(_oldTrack: IAudioTrack, _newTrack: ITrackConstraint): IAudioTrack {
-    return null as any;
-  }
-}
-
