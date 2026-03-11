@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ionic core styles (required for ion-app, ion-toolbar, ion-content, etc.) */
+@import '@ionic/angular/css/core.css';
+@import '@ionic/angular/css/ionic.bundle.css';
+
+/* Ensure full viewport height so ion-app and ion-content can fill the screen */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+ion-app {
+  height: 100%;
+}
