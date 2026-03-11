@@ -11,8 +11,12 @@ import { IAudioTrack } from './ionic-audio-interfaces';
 
 @Component({
   selector: 'audio-track-progress',
-  template:
-    '<em *ngIf="audioTrack?.duration! > 0">{{ audioTrack?.progress | audioTime }} / </em><em>{{ audioTrack?.duration | audioTime }}</em>',
+  template: `
+    @if (audioTrack?.duration! > 0) {
+      <em>{{ audioTrack?.progress | audioTime }} / </em>
+    }
+    <em>{{ audioTrack?.duration | audioTime }}</em>
+  `,
 })
 export class AudioTrackProgressComponent {
   @Input() audioTrack!: IAudioTrack;
@@ -21,11 +25,15 @@ export class AudioTrackProgressComponent {
 @Component({
   selector: 'audio-track-progress-bar',
   template: `
-    <time *ngIf="_showProgress">
-      <span *ngIf="audioTrack" [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
-        {{ audioTrack.duration > 0 ? (audioTrack.progress | audioTime) : '' }}
-      </span>
-    </time>
+    @if (_showProgress) {
+      <time>
+        @if (audioTrack) {
+          <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
+            {{ audioTrack.duration > 0 ? (audioTrack.progress | audioTime) : '' }}
+          </span>
+        }
+      </time>
+    }
     <input
       type="range"
       #seeker
@@ -35,11 +43,15 @@ export class AudioTrackProgressComponent {
       [value]="audioTrack ? audioTrack.progress : 0"
       (change)="seekTo(seeker.value)"
     />
-    <time *ngIf="_showDuration">
-      <span *ngIf="audioTrack" [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
-        {{ audioTrack.duration | audioTime }}
-      </span>
-    </time>
+    @if (_showDuration) {
+      <time>
+        @if (audioTrack) {
+          <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
+            {{ audioTrack.duration | audioTime }}
+          </span>
+        }
+      </time>
+    }
   `,
 })
 export class AudioTrackProgressBarComponent implements OnChanges, DoCheck {

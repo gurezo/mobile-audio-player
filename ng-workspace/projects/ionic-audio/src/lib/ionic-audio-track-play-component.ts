@@ -9,9 +9,13 @@ import { IAudioTrack } from './ionic-audio-interfaces';
       (click)="toggle($event)"
       [disabled]="audioTrack?.error || audioTrack?.isLoading"
     >
-      <span *ngIf="audioTrack?.isPlaying && !audioTrack?.isLoading">❚❚</span>
-      <span *ngIf="!audioTrack?.isPlaying && !audioTrack?.isLoading">▶</span>
-      <ng-content *ngIf="audioTrack?.isLoading && !audioTrack?.error"></ng-content>
+      @if (audioTrack?.isLoading && !audioTrack?.error) {
+        <ng-content></ng-content>
+      } @else if (audioTrack?.isPlaying) {
+        <span>❚❚</span>
+      } @else {
+        <span>▶</span>
+      }
     </button>
   `,
 })
