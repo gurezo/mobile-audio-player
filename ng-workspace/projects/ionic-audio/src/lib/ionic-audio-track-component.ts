@@ -16,7 +16,7 @@ import { CordovaAudioTrack } from './ionic-audio-cordova-track';
   selector: 'audio-track',
   template: '<ng-content></ng-content>',
 })
-export class AudioTrackComponent implements OnChanges, DoCheck {
+export class AudioTrackComponent implements OnChanges, DoCheck, IAudioTrack {
   @Input() track!: ITrackConstraint;
   @Input() autoplay = false;
 
@@ -73,6 +73,18 @@ export class AudioTrackComponent implements OnChanges, DoCheck {
 
   get id(): number {
     return this._audioTrack ? this._audioTrack.id : -1;
+  }
+
+  get src(): string {
+    return this._audioTrack?.src ?? this.track?.src ?? '';
+  }
+
+  stop(): void {
+    this._audioTrack?.stop();
+  }
+
+  destroy(): void {
+    this._audioTrack?.destroy();
   }
 
   get art(): string | undefined {

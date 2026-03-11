@@ -30,7 +30,7 @@ export interface IAudioTrack extends ITrackConstraint {
   progress: number;
   completed: number;
   canPlay: boolean;
-  error: MediaError;
+  error: MediaError | undefined;
 
   play(): void;
   pause(): void;
