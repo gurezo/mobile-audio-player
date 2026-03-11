@@ -3,7 +3,8 @@ import { AudioProvider } from './ionic-audio-providers';
 import { ITrackConstraint } from './ionic-audio-interfaces';
 
 @Directive({
-  selector: '[audio-playlist-item]',
+    selector: '[audio-playlist-item]',
+    standalone: false
 })
 export class AudioPlaylistItemDirective {
   @Input() track!: ITrackConstraint;
