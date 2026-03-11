@@ -13,8 +13,9 @@ import { WebAudioTrack } from './ionic-audio-web-track';
 import { CordovaAudioTrack } from './ionic-audio-cordova-track';
 
 @Component({
-  selector: 'audio-track',
-  template: '<ng-content></ng-content>',
+    selector: 'audio-track',
+    template: '<ng-content></ng-content>',
+    standalone: false
 })
 export class AudioTrackComponent implements OnChanges, DoCheck, IAudioTrack {
   @Input() track!: ITrackConstraint;

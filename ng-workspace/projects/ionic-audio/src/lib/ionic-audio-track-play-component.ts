@@ -2,8 +2,8 @@ import { Component, ElementRef, Input } from '@angular/core';
 import { IAudioTrack } from './ionic-audio-interfaces';
 
 @Component({
-  selector: 'audio-track-play',
-  template: `
+    selector: 'audio-track-play',
+    template: `
     <button
       type="button"
       (click)="toggle($event)"
@@ -18,6 +18,7 @@ import { IAudioTrack } from './ionic-audio-interfaces';
       }
     </button>
   `,
+    standalone: false
 })
 export class AudioTrackPlayComponent {
   @Input() audioTrack!: IAudioTrack;

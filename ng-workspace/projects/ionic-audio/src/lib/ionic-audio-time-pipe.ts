@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'audioTime' })
+@Pipe({
+    name: 'audioTime',
+    standalone: false
+})
 export class AudioTimePipe implements PipeTransform {
   transform(value?: number): string {
     if (value === undefined || Number.isNaN(value)) return '';

@@ -10,21 +10,22 @@ import {
 import { IAudioTrack } from './ionic-audio-interfaces';
 
 @Component({
-  selector: 'audio-track-progress',
-  template: `
+    selector: 'audio-track-progress',
+    template: `
     @if (audioTrack?.duration! > 0) {
       <em>{{ audioTrack?.progress | audioTime }} / </em>
     }
     <em>{{ audioTrack?.duration | audioTime }}</em>
   `,
+    standalone: false
 })
 export class AudioTrackProgressComponent {
   @Input() audioTrack!: IAudioTrack;
 }
 
 @Component({
-  selector: 'audio-track-progress-bar',
-  template: `
+    selector: 'audio-track-progress-bar',
+    template: `
     @if (_showProgress) {
       <time>
         @if (audioTrack) {
@@ -53,6 +54,7 @@ export class AudioTrackProgressComponent {
       </time>
     }
   `,
+    standalone: false
 })
 export class AudioTrackProgressBarComponent implements OnChanges, DoCheck {
   @Input() audioTrack!: IAudioTrack;
