@@ -123,3 +123,7 @@ export class Page1 {
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Development notes
+
+- Conventional Commits とブランチ運用ルールについては `docs/conventional-commits-strategy.md` を参照してください。
