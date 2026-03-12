@@ -59,6 +59,7 @@
     "@capacitor/android": "^8.0.0",
     "@capacitor/cli": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
+    "@types/jasmine": "^6.0.0",
     "jsdom": "^25.0.0",
     "ng-packagr": "^21.2.0",
     "typescript": "~5.9.3",
