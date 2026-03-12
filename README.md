@@ -1,22 +1,23 @@
-# Ionic Audio (ionic-audio3)
+# Ionic Audio Player
 
-##### Forked from [arielfaur's project](https://github.com/arielfaur/ionic-audio)
+This library is a modernized fork of:
 
-An audio player plugin for Ionic that works out of the box in the browser and on device using an underlying audio provider (Web Audio in the browser; Cordova Media or Web Audio on device).
+- [https://github.com/johnnybui/ionic-audio3](https://github.com/johnnybui/ionic-audio3)
+- [https://github.com/arielfaur/ionic-audio](https://github.com/arielfaur/ionic-audio)
+
+It provides an audio player component set for Ionic applications that works out of the box in the browser and on device using an underlying audio provider (Web Audio in the browser; native audio via Capacitor / Cordova on device).
 
 ## Current stack (this repo)
 
-The project has been **migrated** from Ionic 3 + Angular 5 to a modern workspace in **`ng-workspace/`**:
+This project has been **migrated** from Ionic 3 + Angular 5 to a modern Angular workspace:
 
 - **Angular** 21
 - **Ionic Angular** 8
 - **Capacitor** 8 (replacing Cordova for native)
 - **Vitest** for unit tests
 
-- **Library**: `ng-workspace/projects/ionic-audio` — build with `npm run build` (from repo root) or `cd ng-workspace && npm run build:lib`.
-- **Demo app**: `ng-workspace/projects/ionic-audio-demo` — run with `cd ng-workspace && npm start`, tests with `cd ng-workspace && npm test`.
-
-See **`ng-workspace/README.md`** for development server, build, and test commands.
+- **Library**: `projects/ionic-audio` — build with `npm run build` (from repo root) or `npm run build:lib`.
+- **Demo app**: `projects/ionic-audio-demo` — run with `npm start`, tests with `npm test`.
 
 ---
 
@@ -35,9 +36,19 @@ See **`ng-workspace/README.md`** for development server, build, and test command
 
 ## Installation
 
-**Using the migrated package (Angular 21 + Ionic Angular 8):** install from the built library in this repo or from a published version that includes the `ng-workspace` build. In your Angular app, import `IonicAudioModule` from `ionic-audio` and add `provideIonicAngular()` (or `IonicModule.forRoot()`) as needed. See the demo app in `ng-workspace/projects/ionic-audio-demo` for a full example.
+### Modern package (Angular 21 + Ionic Angular 8)
 
-**Legacy (Ionic 3 / Angular 5):** the following applied to the original stack.
+Install from npm:
+
+```
+npm install @gurezo/ionic-audio-player
+```
+
+In your Angular app, import `IonicAudioModule` from `@gurezo/ionic-audio-player` and add `provideIonicAngular()` (or `IonicModule.forRoot()`) as needed. See the demo app in `projects/ionic-audio-demo` for a full example.
+
+### Legacy (Ionic 3 / Angular 5)
+
+The following information applies to the original `ionic-audio3` stack and is kept here for reference.
 
 ```
 npm install --save ionic-audio3
