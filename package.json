@@ -1,5 +1,5 @@
 {
-  "name": "ionic-audio3",
+  "name": "ionic-audio-player-workspace",
   "version": "3.2.3",
   "description": "An audio player originally built for Ionic 3 and Angular 5, now migrated to Angular 21, Ionic Angular 8, and Capacitor 8.",
   "private": true,
@@ -20,8 +20,8 @@
     "release": "npm run build:lib && cd dist/ionic-audio && npm publish"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JohnnyBui/ionic-audio3.git"
+  "type": "git",
+  "url": "git+https://github.com/gurezo/ionic-audio-player.git"
   },
   "keywords": [
     "ionic",
@@ -32,7 +32,7 @@
   ],
   "author": "Johnny Bui",
   "license": "MIT",
-  "homepage": "https://github.com/JohnnyBui/ionic-audio3",
+  "homepage": "https://github.com/gurezo/ionic-audio-player",
   "dependencies": {
     "@angular/animations": "^21.2.2",
     "@angular/common": "^21.2.2",
