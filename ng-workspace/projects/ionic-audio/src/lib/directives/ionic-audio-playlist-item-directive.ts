@@ -1,10 +1,10 @@
 import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { AudioProvider } from './ionic-audio-providers';
-import { ITrackConstraint } from './ionic-audio-interfaces';
+import { AudioProvider } from '../services/ionic-audio-providers';
+import { ITrackConstraint } from '../models/ionic-audio-interfaces';
 
 @Directive({
-    selector: '[audio-playlist-item]',
-    standalone: false
+  selector: '[audio-playlist-item]',
+  standalone: false,
 })
 export class AudioPlaylistItemDirective {
   @Input() track!: ITrackConstraint;

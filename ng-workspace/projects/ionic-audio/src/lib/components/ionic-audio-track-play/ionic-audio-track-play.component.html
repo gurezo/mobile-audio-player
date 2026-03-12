@@ -1,0 +1,14 @@
+<button
+  type="button"
+  (click)="toggle($event)"
+  [disabled]="audioTrack?.error || audioTrack?.isLoading"
+>
+  @if (audioTrack?.isLoading && !audioTrack?.error) {
+    <ng-content></ng-content>
+  } @else if (audioTrack?.isPlaying) {
+    <span>❚❚</span>
+  } @else {
+    <span>▶</span>
+  }
+</button>
+

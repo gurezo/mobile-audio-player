@@ -1,24 +1,11 @@
 import { Component, ElementRef, Input } from '@angular/core';
-import { IAudioTrack } from './ionic-audio-interfaces';
+import { IAudioTrack } from '../../models/ionic-audio-interfaces';
 
 @Component({
-    selector: 'audio-track-play',
-    template: `
-    <button
-      type="button"
-      (click)="toggle($event)"
-      [disabled]="audioTrack?.error || audioTrack?.isLoading"
-    >
-      @if (audioTrack?.isLoading && !audioTrack?.error) {
-        <ng-content></ng-content>
-      } @else if (audioTrack?.isPlaying) {
-        <span>❚❚</span>
-      } @else {
-        <span>▶</span>
-      }
-    </button>
-  `,
-    standalone: false
+  selector: 'audio-track-play',
+  templateUrl: './ionic-audio-track-play.component.html',
+  styleUrls: ['./ionic-audio-track-play.component.scss'],
+  standalone: false,
 })
 export class AudioTrackPlayComponent {
   @Input() audioTrack!: IAudioTrack;

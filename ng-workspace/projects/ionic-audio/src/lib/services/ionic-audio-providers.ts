@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IAudioProvider, ITrackConstraint, IAudioTrack } from './ionic-audio-interfaces';
-import { WebAudioTrack } from './ionic-audio-web-track';
+import { IAudioProvider, ITrackConstraint, IAudioTrack } from '../models/ionic-audio-interfaces';
+import { WebAudioTrack } from '../core/ionic-audio-web-track';
 
 export function defaultAudioProviderFactory() {
   return new WebAudioProvider();
@@ -90,3 +90,4 @@ export class WebAudioProvider extends AudioProvider {
     return newAudioTrack;
   }
 }
+

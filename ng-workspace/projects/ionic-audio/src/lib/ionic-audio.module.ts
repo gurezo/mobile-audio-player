@@ -1,11 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AudioTrackComponent } from './ionic-audio-track-component';
-import { AudioTrackProgressComponent, AudioTrackProgressBarComponent } from './ionic-audio-track-progress-component';
-import { AudioTrackPlayComponent } from './ionic-audio-track-play-component';
-import { AudioTimePipe } from './ionic-audio-time-pipe';
-import { AudioPlaylistItemDirective } from './ionic-audio-playlist-item-directive';
-import { AudioProvider } from './ionic-audio-providers';
+import { AudioTrackComponent } from './components/ionic-audio-track/ionic-audio-track.component';
+import { AudioTrackProgressComponent } from './components/ionic-audio-track-progress/ionic-audio-track-progress.component';
+import { AudioTrackProgressBarComponent } from './components/ionic-audio-track-progress-bar/ionic-audio-track-progress-bar.component';
+import { AudioTrackPlayComponent } from './components/ionic-audio-track-play/ionic-audio-track-play.component';
+import { AudioTimePipe } from './pipes/ionic-audio-time-pipe';
+import { AudioPlaylistItemDirective } from './directives/ionic-audio-playlist-item-directive';
+import { AudioProvider } from './services/ionic-audio-providers';
 
 export function declarations() {
   return [

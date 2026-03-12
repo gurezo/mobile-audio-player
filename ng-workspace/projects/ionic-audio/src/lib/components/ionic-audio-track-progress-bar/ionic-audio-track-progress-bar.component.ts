@@ -7,54 +7,13 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { IAudioTrack } from './ionic-audio-interfaces';
+import { IAudioTrack } from '../../models/ionic-audio-interfaces';
 
 @Component({
-    selector: 'audio-track-progress',
-    template: `
-    @if (audioTrack?.duration! > 0) {
-      <em>{{ audioTrack?.progress | audioTime }} / </em>
-    }
-    <em>{{ audioTrack?.duration | audioTime }}</em>
-  `,
-    standalone: false
-})
-export class AudioTrackProgressComponent {
-  @Input() audioTrack!: IAudioTrack;
-}
-
-@Component({
-    selector: 'audio-track-progress-bar',
-    template: `
-    @if (_showProgress) {
-      <time>
-        @if (audioTrack) {
-          <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
-            {{ audioTrack.duration > 0 ? (audioTrack.progress | audioTime) : '' }}
-          </span>
-        }
-      </time>
-    }
-    <input
-      type="range"
-      #seeker
-      min="0"
-      [max]="audioTrack ? audioTrack.duration : 0"
-      step="any"
-      [value]="audioTrack ? audioTrack.progress : 0"
-      (change)="seekTo(seeker.value)"
-    />
-    @if (_showDuration) {
-      <time>
-        @if (audioTrack) {
-          <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
-            {{ audioTrack.duration | audioTime }}
-          </span>
-        }
-      </time>
-    }
-  `,
-    standalone: false
+  selector: 'audio-track-progress-bar',
+  templateUrl: './ionic-audio-track-progress-bar.component.html',
+  styleUrls: ['./ionic-audio-track-progress-bar.component.scss'],
+  standalone: false,
 })
 export class AudioTrackProgressBarComponent implements OnChanges, DoCheck {
   @Input() audioTrack!: IAudioTrack;

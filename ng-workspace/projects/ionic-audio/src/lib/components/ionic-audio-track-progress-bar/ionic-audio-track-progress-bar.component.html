@@ -1,0 +1,28 @@
+@if (_showProgress) {
+  <time>
+    @if (audioTrack) {
+      <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
+        {{ audioTrack.duration > 0 ? (audioTrack.progress | audioTime) : '' }}
+      </span>
+    }
+  </time>
+}
+<input
+  type="range"
+  #seeker
+  min="0"
+  [max]="audioTrack ? audioTrack.duration : 0"
+  step="any"
+  [value]="audioTrack ? audioTrack.progress : 0"
+  (change)="seekTo(seeker.value)"
+/>
+@if (_showDuration) {
+  <time>
+    @if (audioTrack) {
+      <span [style.opacity]="audioTrack.duration > 0 ? 1 : 0">
+        {{ audioTrack.duration | audioTime }}
+      </span>
+    }
+  </time>
+}
+

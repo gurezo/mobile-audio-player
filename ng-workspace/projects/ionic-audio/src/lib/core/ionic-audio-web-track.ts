@@ -1,5 +1,5 @@
-import { Injectable, Optional } from '@angular/core';
-import { IAudioTrack } from './ionic-audio-interfaces';
+import { Injectable } from '@angular/core';
+import { IAudioTrack } from '../models/ionic-audio-interfaces';
 
 declare const window: any;
 window.AudioContext = window['AudioContext'] || window['webkitAudioContext'];

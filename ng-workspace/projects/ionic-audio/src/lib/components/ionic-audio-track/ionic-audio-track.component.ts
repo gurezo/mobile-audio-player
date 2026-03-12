@@ -7,14 +7,15 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { ITrackConstraint, IAudioTrack } from './ionic-audio-interfaces';
-import { AudioProvider } from './ionic-audio-providers';
-import { WebAudioTrack } from './ionic-audio-web-track';
+import { ITrackConstraint, IAudioTrack } from '../../models/ionic-audio-interfaces';
+import { AudioProvider } from '../../services/ionic-audio-providers';
+import { WebAudioTrack } from '../../core/ionic-audio-web-track';
 
 @Component({
-    selector: 'audio-track',
-    template: '<ng-content></ng-content>',
-    standalone: false
+  selector: 'audio-track',
+  templateUrl: './ionic-audio-track.component.html',
+  styleUrls: ['./ionic-audio-track.component.scss'],
+  standalone: false,
 })
 export class AudioTrackComponent implements OnChanges, DoCheck, IAudioTrack {
   @Input() track!: ITrackConstraint;
