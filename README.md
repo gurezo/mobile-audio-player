@@ -1,11 +1,11 @@
-# Ionic Audio Player
+# Mobile Audio Player
 
 This library is a modernized fork of:
 
 - [https://github.com/johnnybui/ionic-audio3](https://github.com/johnnybui/ionic-audio3)
 - [https://github.com/arielfaur/ionic-audio](https://github.com/arielfaur/ionic-audio)
 
-It provides an audio player component set for Ionic applications that works out of the box in the browser and on device using an underlying audio provider (Web Audio in the browser; native audio via Capacitor / Cordova on device).
+It provides an audio player component set for mobile-focused Ionic applications that works out of the box in the browser and on device using an underlying audio provider (Web Audio in the browser; native audio via Capacitor / Cordova on device).
 
 ## Origin
 
@@ -51,10 +51,10 @@ This project has been **migrated** from Ionic 3 + Angular 5 to a modern Angular 
 Install from npm:
 
 ```
-npm install @gurezo/ionic-audio-player
+npm install @gurezo/mobile-audio-player
 ```
 
-In your Angular app, import `IonicAudioModule` from `@gurezo/ionic-audio-player` and add `provideIonicAngular()` (or `IonicModule.forRoot()`) as needed. See the demo app in `projects/ionic-audio-demo` for a full example.
+In your Angular app, import `IonicAudioModule` from `@gurezo/mobile-audio-player` and add `provideIonicAngular()` (or `IonicModule.forRoot()`) as needed. See the demo app in `projects/ionic-audio-demo` for a full example.
 
 ### Legacy (Ionic 3 / Angular 5)
 

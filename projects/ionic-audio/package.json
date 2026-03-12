@@ -1,10 +1,10 @@
 {
-  "name": "@gurezo/ionic-audio-player",
+  "name": "@gurezo/mobile-audio-player",
   "version": "4.0.0",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@angular/common": "^21.2.2",
+    "@angular/core": "^21.2.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"
